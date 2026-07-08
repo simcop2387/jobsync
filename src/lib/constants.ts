@@ -30,7 +30,7 @@ export const APP_CONSTANTS = {
 
   // Ollama API timeouts
   AI_OLLAMA_LIST_TIMEOUT_MS: 5_000,
-  AI_OLLAMA_GENERATE_TIMEOUT_MS: 10_000,
+  AI_OLLAMA_GENERATE_TIMEOUT_MS: 600_000,
 
   // Ollama context window (covers prompt + generation combined). Defaults to
   // 2048; even 4096 overflows for a full resume plus the system prompt and the
@@ -41,17 +41,17 @@ export const APP_CONSTANTS = {
   // Resume import generation timeout. Generous because a full resume streams a
   // few thousand tokens of verbatim JSON, which a local model can take minutes
   // to produce; too low and the stream is cut mid-entry.
-  AI_RESUME_IMPORT_TIMEOUT_MS: 240_000,
+  AI_RESUME_IMPORT_TIMEOUT_MS: 600_000,
 
   // Resume review generation timeout. The review is a full markdown analysis
   // (scores line plus several sections), so a local model can take minutes;
   // too low cuts the stream mid-review.
-  AI_RESUME_REVIEW_TIMEOUT_MS: 180_000,
+  AI_RESUME_REVIEW_TIMEOUT_MS: 600_000,
 
   // Job match generation timeout. Like the review, the match is a markdown
   // analysis (scores line plus several sections) over a resume and a JD, so a
   // local model can take minutes; too low cuts the stream mid-analysis.
-  AI_JOB_MATCH_TIMEOUT_MS: 180_000,
+  AI_JOB_MATCH_TIMEOUT_MS: 600_000,
 
   // Automation manual run rate limiting
   AUTOMATION_MAX_MANUAL_RUNS_PER_HOUR: 5,
