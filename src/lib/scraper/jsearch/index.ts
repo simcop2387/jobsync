@@ -49,7 +49,7 @@ export function createJSearchProvider(rapidApiKey?: string): ScraperService {
       location: string,
     ): Promise<ScraperResult<JobSearchResult[]>> {
       try {
-        const url = new URL(`${JSEARCH_BASE_URL}/search`);
+        const url = new URL(`${JSEARCH_BASE_URL}/search-v2`);
         url.searchParams.set("query", `${keywords} in ${location}`);
         url.searchParams.set("page", "1");
         url.searchParams.set("num_pages", "1");
@@ -141,7 +141,7 @@ export async function searchJSearchJobs(
   }
 
   try {
-    const url = new URL(`${JSEARCH_BASE_URL}/search`);
+    const url = new URL(`${JSEARCH_BASE_URL}/search-v2`);
     url.searchParams.set("query", `${keywords} in ${location}`);
     url.searchParams.set("page", "1");
     url.searchParams.set("num_pages", "1");

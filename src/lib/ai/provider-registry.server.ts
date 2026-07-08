@@ -120,7 +120,7 @@ export const PROVIDER_VERIFIERS: Record<
 
   rapidapi: async (key) => {
     const res = await fetch(
-      "https://jsearch.p.rapidapi.com/search?query=test&num_pages=1",
+      "https://jsearch.p.rapidapi.com/search-v2?query=test&num_pages=1",
       {
         headers: {
           "X-RapidAPI-Key": key,
